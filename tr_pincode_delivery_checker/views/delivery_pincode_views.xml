@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_delivery_pincode_list" model="ir.ui.view">
+        <field name="name">delivery.pincode.list</field>
+        <field name="model">delivery.pincode</field>
+        <field name="arch" type="xml">
+            <list string="Delivery Pincodes" editable="bottom">
+                <field name="pincode"/>
+                <field name="city"/>
+                <field name="state_id"/>
+                <field name="country_id"/>
+                <field name="delivery_days"/>
+                <field name="cod_available"/>
+                <field name="is_serviceable"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_delivery_pincode_form" model="ir.ui.view">
+        <field name="name">delivery.pincode.form</field>
+        <field name="model">delivery.pincode</field>
+        <field name="arch" type="xml">
+            <form string="Delivery Pincode">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="pincode"/>
+                            <field name="city"/>
+                            <field name="state_id"/>
+                            <field name="country_id"/>
+                        </group>
+                        <group>
+                            <field name="delivery_days"/>
+                            <field name="cod_available"/>
+                            <field name="is_serviceable"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_delivery_pincode_search" model="ir.ui.view">
+        <field name="name">delivery.pincode.search</field>
+        <field name="model">delivery.pincode</field>
+        <field name="arch" type="xml">
+            <search string="Delivery Pincodes">
+                <field name="pincode"/>
+                <field name="city"/>
+                <field name="state_id"/>
+                <filter string="Serviceable" name="serviceable" domain="[('is_serviceable', '=', True)]"/>
+                <filter string="Not Serviceable" name="not_serviceable" domain="[('is_serviceable', '=', False)]"/>
+                <filter string="COD Available" name="cod_available" domain="[('cod_available', '=', True)]"/>
+                <group>
+                    <filter string="State" name="group_state" context="{'group_by': 'state_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_delivery_pincode" model="ir.actions.act_window">
+        <field name="name">Delivery Pincodes</field>
+        <field name="res_model">delivery.pincode</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_delivery_pincode_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add your first serviceable pincode
+            </p>
+            <p>
+                Customers will see delivery availability and an estimated
+                delivery date on the product page based on this list.
+                You can also import pincodes in bulk using the Import button.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_delivery_pincode"
+        name="Delivery Pincodes"
+        parent="website_sale.menu_catalog"
+        action="action_delivery_pincode"
+        sequence="7"/>
+
+</odoo>

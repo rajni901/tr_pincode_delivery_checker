@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="product_pincode_checker" inherit_id="website_sale.product">
+        <xpath expr="//div[hasclass('o_wsale_product_details_content_section_cta')]" position="after">
+            <div class="o_wsale_product_details_content_section tr_pincode_checker_section mb-4">
+                <div class="tr_pincode_checker" data-check-url="/shop/check_delivery_pincode">
+                    <label for="tr_pincode_input" class="fw-bold mb-1 d-block">
+                        Check Delivery Availability
+                    </label>
+                    <div class="input-group" style="max-width: 350px;">
+                        <input type="text"
+                               id="tr_pincode_input"
+                               class="form-control"
+                               placeholder="Enter Pincode"
+                               maxlength="10"/>
+                        <button type="button" class="btn btn-secondary tr_pincode_check_btn">
+                            Check
+                        </button>
+                    </div>
+                    <div class="tr_pincode_result mt-2" style="display:none;"/>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

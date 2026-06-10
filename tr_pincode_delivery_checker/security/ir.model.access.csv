@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_delivery_pincode_user,delivery.pincode.user,model_delivery_pincode,base.group_user,1,0,0,0
+access_delivery_pincode_sales,delivery.pincode.sales,model_delivery_pincode,sales_team.group_sale_manager,1,1,1,1
+access_delivery_pincode_website,delivery.pincode.website,model_delivery_pincode,website.group_website_designer,1,1,1,1

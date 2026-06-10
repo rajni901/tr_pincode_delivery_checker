@@ -1,0 +1,7 @@
+.tr_pincode_checker_section .tr_pincode_result {
+    font-size: 0.95rem;
+}
+
+.tr_pincode_checker_section .tr_pincode_check_btn {
+    white-space: nowrap;
+}

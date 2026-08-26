@@ -4,7 +4,7 @@
     'category': 'Website/eCommerce',
     'summary': 'Let customers check delivery availability and estimated delivery date by pincode on the product page',
     'description': """
-Pincode Delivery Checker & Estimated Delivery Date — by Technical Rajni
+Pincode Delivery Checker & Estimated Delivery Date — by Vayu Sharma
 =========================================================================
 Add a "Check Delivery" widget on your product pages so customers can
 instantly know if you deliver to their area, and when to expect it.
@@ -18,8 +18,8 @@ Features:
 - Manage pincodes from Website > eCommerce > Delivery Pincodes
 - Import pincodes in bulk via standard CSV import
     """,
-    'author': 'Technical Rajni',
-    'website': 'https://www.technicalrajni.com',
+    'author': 'Vayu Sharma',
+    'website': '',
     'license': 'OPL-1',
     'depends': ['website_sale'],
     'data': [
